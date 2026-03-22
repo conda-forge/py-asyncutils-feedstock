@@ -1,5 +1,5 @@
 context:
-  version: "0.8.14"
+  version: "0.8.15"
   python_min: "3.14"
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/py_asyncutils/py_asyncutils-${{ version }}.tar.gz
-  sha256: dd2215019ff327263127426536dd635b79ddf9a0eac87743788758cf1480aaff
+  sha256: c5e195e85b29f119b90a5fad350c7171f4ba09e70f2badc0185a32d95b4572ba
 
 build:
   script: python -m pip install . --no-deps --ignore-installed -vv
