@@ -1,6 +1,6 @@
 context:
   version: "0.8.18"
-  python_min: "3.13"
+  python_min: "3.12"
 
 package:
   name: py-asyncutils
