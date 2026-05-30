@@ -4,14 +4,14 @@ context:
 
 package:
   name: py-asyncutils
-  version: ${{ version }}
+  version: ${{version}}
 
 source:
-  url: https://pypi.org/packages/source/p/py_asyncutils/py_asyncutils-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/py_asyncutils/py_asyncutils-${{version}}.tar.gz
   sha256: 71731d820af8ffdcfd20814bc9085b9b166dc6039f679a47fd020e3a209e9c23
 
 build:
-  script: python -m pip install . --no-deps --ignore-installed -vv
+  script: uv pip install --no-deps -vv .
   number: 0
   noarch: python
   python:
@@ -21,16 +21,15 @@ build:
 
 requirements:
   host:
-    - python ${{ python_min }}.*
-    - pip
-    - setuptools
+    - python ${{python_min}}.*
+    - uv
   run:
-    - python >=${{ python_min }}
+    - python >=${{python_min}}
 
 tests:
   - python:
       python_version:
-        - ${{ python_min }}.*
+        - ${{python_min}}.*
         - "*"
       imports:
         - asyncutils
@@ -38,18 +37,18 @@ tests:
       pip_check: true
   - script:
       - python -m asyncutils -?
-      - python -m asyncutils -v
-      # - echo "print('REPL test successful'); raise SystemExit(0)" | python -m asyncutils -p
+      - asyncutils -v
+      - printf "raise SystemExit\n" | autils -dp
 
 about:
   homepage: https://github.com/jonathandung/asyncutils
   summary: 'Your go-to async toolkit library.'
   description: |
-    You may see this as yet another async library, but with its 30+ submodules each serving different use cases, asyncutils is truly
-    'broad and specific', aiming to suit your every need for recurring patterns in async, both high-level and low-level.
+    You may see this as yet another async library, but with its 30+ submodules each serving different use cases, asyncutils aims to suit
+    your every need for recurring patterns in async, both high-level and low-level.
     Another merit is that is starts up fast (indeed, the asyncio import takes up 95% of the time required to load the module), and comes
-    with an extensible REPL console for lightning-speed prototyping and testing (you don't even have to use asyncio.run; just await!),
-    and a beautiful command line. An 'asyncutils' command is made available to run the console, for which 'autils' is an alias.
+    with an extensible REPL console for lightning-speed prototyping and testing, and a beautiful command line. An 'asyncutils' command
+    is made available to run the console, for which 'autils' is an alias.
   license: MIT
   license_file: LICENSE
   repository: https://github.com/jonathandung/asyncutils
