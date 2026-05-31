@@ -4,14 +4,14 @@ context:
 
 package:
   name: py-asyncutils
-  version: ${{version}}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/p/py_asyncutils/py_asyncutils-${{version}}.tar.gz
+  url: https://pypi.org/packages/source/p/py_asyncutils/py_asyncutils-${{ version }}.tar.gz
   sha256: 71731d820af8ffdcfd20814bc9085b9b166dc6039f679a47fd020e3a209e9c23
 
 build:
-  script: uv pip install --no-deps -vv .
+  script: uv pip install --python $PYTHON --no-deps -vv .
   number: 0
   noarch: python
   python:
@@ -21,21 +21,21 @@ build:
 
 requirements:
   host:
-    - python ${{python_min}}.*
+    - python ${{ python_min }}.*
     - uv
   run:
-    - python >=${{python_min}}
+    - python >=${{ python_min }}
 
 tests:
   - python:
       python_version:
-        - ${{python_min}}.*
+        - ${{ python_min }}.*
         - "*"
       imports:
         - asyncutils
       pip_check: true
   - script:
-      - python -m asyncutils -?
+      - $PYTHON -m asyncutils -?
       - asyncutils -v
       - echo "raise SystemExit" | autils -dp
 
