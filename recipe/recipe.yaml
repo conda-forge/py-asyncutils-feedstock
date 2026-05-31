@@ -33,12 +33,11 @@ tests:
         - "*"
       imports:
         - asyncutils
-        - asyncutils.version
       pip_check: true
   - script:
       - python -m asyncutils -?
       - asyncutils -v
-      - printf "raise SystemExit\n" | autils -dp
+      - echo "raise SystemExit" | autils -dp
 
 about:
   homepage: https://github.com/jonathandung/asyncutils
