@@ -11,11 +11,11 @@ Summary: Your go-to async toolkit library.
 
 Development: https://github.com/jonathandung/asyncutils
 
-You may see this as yet another async library, but with its 30+ submodules each serving different use cases, asyncutils is truly
-'broad and specific', aiming to suit your every need for recurring patterns in async, both high-level and low-level.
+You may see this as yet another async library, but with its 30+ submodules each serving different use cases, asyncutils aims to suit
+your every need for recurring patterns in async, both high-level and low-level.
 Another merit is that is starts up fast (indeed, the asyncio import takes up 95% of the time required to load the module), and comes
-with an extensible REPL console for lightning-speed prototyping and testing (you don't even have to use asyncio.run; just await!),
-and a beautiful command line. An 'asyncutils' command is made available to run the console, for which 'autils' is an alias.
+with an extensible REPL console for lightning-speed prototyping and testing, and a beautiful command line. An 'asyncutils' command
+is made available to run the console, for which 'autils' is an alias.
 
 Current build status
 ====================
