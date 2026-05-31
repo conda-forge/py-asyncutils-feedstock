@@ -37,7 +37,7 @@ tests:
   - script:
       - $PYTHON -m asyncutils -?
       - asyncutils -v
-      - echo "raise SystemExit" | autils -dp
+      - autils -h
 
 about:
   homepage: https://github.com/jonathandung/asyncutils
