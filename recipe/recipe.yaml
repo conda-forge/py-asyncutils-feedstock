@@ -11,7 +11,7 @@ source:
   sha256: fb4fd2a7cc9af5117f448983e485e01b3e9462302b14db422f2e0c5334959830
 
 build:
-  script: uv pip install --python $PYTHON --no-deps -vv .
+  script: uv pip install --python ${{ PYTHON }} --no-deps -vv .
   number: 0
   noarch: python
   python:
@@ -35,7 +35,7 @@ tests:
         - asyncutils
       pip_check: true
   - script:
-      - $PYTHON -m asyncutils -?
+      - ${{ PYTHON }} -m asyncutils -?
       - asyncutils -v
       - autils -h
 
